@@ -16,13 +16,9 @@ class S3WriteStream extends Writable {
   }
 
   _final(callback) {
-    console.log('Final');
-
     this.writeStream.push(null);
 
     this.uploader.then((result) => {
-      console.log('Uploader Callback');
-      console.log(result);
       callback();
     })
   }
